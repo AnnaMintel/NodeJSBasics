@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cowsay": "^1.6.0",
     "currency-converter-vl": "^1.0.2"
   }
 }
