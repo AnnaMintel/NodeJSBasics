@@ -1,36 +1,12 @@
-const fs = require("fs");
+const http = require('http');
+const PORT = 3000;
+const HOST = 'localhost';
 
-//fs.mkdirSync('test_files');
-fs.mkdir('folder_1', () => {
-    fs.writeFile('./folder_1/aloha.txt', 'Hello', () => { })
-}) 
-
-// Create directory named 'text-files' and write a file in it
-fs.mkdir('folder_2', { recursive: true }, (err) => {
-    if (err) {
-        console.error('Error creating directory:', err);
-        return;
-    }
-    fs.writeFile('./folder_2/new.txt', 'Aloha', (err) => {
-        if (err) {
-            console.error('Error writing file:', err);
-        } else {
-            console.log('File created successfully!');
-        }
-    });
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain; charset=utf8'});
+    res.end('Hello NODE JS');
 });
 
-// creating folders with unique id
-const currentDate = new Date();
-const milliseconds = currentDate.getTime();
-
-fs.mkdir(`text-files-${milliseconds}`, () => {
-  fs.writeFile(`./text-files-${milliseconds}/new.txt`, "Hello", () => {
-    console.log("Success" + milliseconds);
-  });
+server.listen(PORT, HOST, () => {
+    console.log(`Server is launched: http://${HOST}:${PORT}`)
 });
-
-// deleting folders
-fs.unlink('./hello/hello.txt', () => {
-    fs.rmdir('./hello', () => {})
-})
