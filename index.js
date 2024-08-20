@@ -3,16 +3,19 @@ const PORT = 3001;
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-    res.send('This is home page!');
+    res.render('index');
 });
 
 app.get('/about', (req, res) => {
-    res.send('This is ABOUT page!');
+    res.render('about');
 });
 
-app.get('/user/:name/:id', (req, res) => {
-    res.send(`User ID: ${req.params.id}. User name: ${req.params.name}`);
+app.get('/user/:username', (req, res) => {
+    let data = { username: req.params.username, hobbies: ['football', 'skate'] };
+    res.render('user', data); // 
 });
 
 app.listen(3001, () => {
