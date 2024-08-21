@@ -1,0 +1,59 @@
+body, h1, span, nav, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+form input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+form button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #ffffff;
+    color: #007BFF;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e0e0e0;
+}
